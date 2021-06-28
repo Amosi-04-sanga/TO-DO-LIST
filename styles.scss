@@ -1,0 +1,212 @@
+*,
+*::before, 
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: teal;
+    min-height: 100vh;
+}
+
+.header {
+    width: 70%;
+    margin: 3rem auto;
+    color: white;
+    border-radius: .6rem;
+    padding: 1rem 0;
+    text-transform: capitalize;
+
+    &--margin {
+        margin: .5rem .3rem 0;
+
+        overflow: hidden;
+        white-space: nowrap;
+        transform: scale(0);
+    }
+
+    &--margin.active {
+        transform: scale(1);
+    }
+
+    &__greeting.active {
+        width: 8ch;
+        animation: step-greeting 1.5s steps(8);
+    }
+
+    &__intro.active {
+        width: 21ch;
+        animation: step-intro 3s steps(21);
+    }
+
+    &__my-career.active {
+        width: 32ch;
+        animation: step-my-career 3.5s steps(32);
+    }
+
+    &__welcome.active {
+        width: 22ch;
+        animation: step-welcome 1.5s steps(22);
+    }
+
+
+
+}
+
+@keyframes step-greeting {
+   0%{ width: 0ch;}
+   100%{ width: 8ch;}
+}
+
+@keyframes step-intro {
+   0%{ width: 0ch;}
+   100%{ width: 21ch;}
+}
+
+@keyframes step-my-career {
+   0%{ width: 0ch;}
+   100%{ width: 32ch;}
+}
+
+@keyframes step-welcome {
+   0%{ width: 0ch;}
+   100%{ width: 22ch;}
+}
+
+
+
+
+.to-do-list {
+    width: 307px;
+    margin: 3rem auto;
+}
+
+.to-do-list__header {
+    width: 240px;
+    height: 38px;
+    border-radius: 10%;
+    display: flex;
+    margin: auto;
+}
+
+.to-do-list__input {
+    flex: 80%;
+}
+
+.to-do-list__button {
+    flex: 20%;
+}
+
+input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-radius: inherit;
+}
+
+.task__added {
+    text-align: center;
+    padding: .4rem 0;
+    list-style-type: none;
+}
+
+#task-input {
+    background-color: rgba(17, 80, 241, 0.6);
+    padding: 0 1rem;
+    color: white;
+    font-size: 1.1rem;
+}
+
+#task-input::placeholder {
+    font-size: 16px;
+    color: rgb(194, 132, 132);
+}
+
+#added {
+    color: wheat;
+    background-color: rgb(57, 55, 202);
+}
+
+#added:hover {
+    background-color: rgb(6, 6, 253);
+}
+
+.to-do-list__message {
+    font: {
+        weight: normal;
+        style: oblique;
+    };
+    color: wheat;
+    transform: scale(1);
+}
+
+.to-do-list__message.shake {
+    animation: shake .2s ease-in;
+    animation-iteration-count: 2;
+}
+
+@keyframes shake {
+    0%{ padding-left: 0;}
+    100%{ padding-left: 5px;}
+}
+
+// tasks list.
+.to-do-list__list {
+    width: 70%;
+    margin: 40px auto;
+    text-align: center;
+    color: white;
+    list-style-type: none;
+}
+
+.to-do-list__item {
+    position: relative;
+    padding: .3rem .7rem;
+    background-color: wheat;
+    color: black;
+    cursor: pointer;
+    margin: .3rem 0;
+    border-radius: 4%;
+    text-transform: capitalize;
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.to-do-list__item.scale {
+    animation: scale .4s ease-in;
+    transform: scale(0);
+}
+
+@keyframes scale {
+    0%{ transform: scaleX(1);}
+    100%{ transform: scaleX(0);}
+}
+
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    display: block;
+    height: 100%;
+    width: 12%;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+    background-color: rgb(221, 69, 69);
+    padding-top: .2rem;
+    cursor: pointer;
+}
+
+.close:hover {
+    transition: background-color .2s linear;
+    background-color: red;
+}
+
